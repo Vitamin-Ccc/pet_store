@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_store, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   # Read
   def index
@@ -18,9 +18,9 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new(pets_params)
+    @pet = Pet.new(pet_params)
     if @pet.save
-      redirect_to pets_path
+      redirect_to root_path
     else
       render component: "petNew", props: { pet: @pet }
     end
@@ -35,7 +35,7 @@ class PetsController < ApplicationController
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
-      redirect_to pets_path
+      redirect_to root_path
     else
       render component: "petEdit", props: { pet: @pet }
     end
@@ -50,8 +50,8 @@ class PetsController < ApplicationController
 
   private
 
-  def pets_params
-    params.require(:pet).require(:name)
+  def pet_params
+    params.require(:pet).permit(:name)
   end
 
   def set_pet
