@@ -9,6 +9,9 @@ const pets = (props) => {
           <p><a href = {`/pets/${pet.id}`}>View</a></p>
           <p><a href = {`/pets/${pet.id}/breeds`}>View Breeds</a></p>
           <p><a href = {`/pets/${pet.id}/edit`}>Edit</a></p>
+          <a href={`/pets/${pet.id}`} data-method="delete">
+            Delete
+          </a>
         </div>
       )
     });

@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Pet.destroy_all
 Breed.destroy_all
+Pet.destroy_all
 
 dog = Pet.create(name: "Dogs")
 cat = Pet.create(name: "Cats")

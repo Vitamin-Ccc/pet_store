@@ -8,7 +8,7 @@ const breeds = (props) => {
           <h3>{breed.name}</h3>
           <p>{breed.description}</p>
           <p><a href = {`/pets/${props.pet.id}/breeds/${breed.id}`}>View</a></p>
-          <p><a href = {`/pets/${props.pet.id}/breeds/edit`}>Edit Breed</a></p>
+          <p><a href = {`/pets/${props.pet.id}/breeds/${breed.id}/edit`}>Edit Breed</a></p>
           <p><a data-method = "delete" href = {`/pets/${props.pet.id}/breeds/${breed.id}`}>Delete Breed</a></p>
         </div>
       );
